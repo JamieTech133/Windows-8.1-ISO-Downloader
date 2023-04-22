@@ -7,7 +7,7 @@ rem Set the download URL
 set downloadURL=https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_with_update_x64_dvd_6051480.iso
 
 rem Set the download directory
-set downloadDirectory=C:\Users\Jamie\Downloads\Windows 8.1 downloader
+set downloadDirectory=C:\Users\%USERNAME%\Downloads\
 
 rem Get the user's input
 set /p userInput=Do you understand that Windows 8.1 is out of support. Would you like to proceed (y/n):
@@ -93,11 +93,12 @@ if "%userInput%"=="1" (
   echo Downloading Windows 8.1 Language Pack x64...
   powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/mu_windows_8.1_language_pack_with_update_x64_dvd_6066963.iso', '%downloadDirectory%Windows%userInput%.ISO')"
 ) else (
-  echo Invalid input.
+  echo Invalid input. Exiting...
   goto :eof
 )
 
 rem Display a success message
 echo.
 echo Windows has been successfully downloaded.
+echo You can Download Rufus to burn the ISO to a USB or Download WinCDEmu to Mount This to a Virtual Drive.
 echo.
