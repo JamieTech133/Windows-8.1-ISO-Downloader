@@ -24,7 +24,7 @@ if "%userInput%"=="y" (
 
 rem Display a list of options
 echo If you need to enter a password, try bigcdn.
-echo Windows 8.1 ISO Downloader made by Jamie and Bard AI.
+echo Windows 8.1 and Server 2012 R2 ISO Downloader made by Jamie and Bard AI.
 echo.
 echo 1. Download x64 ISO
 echo 2. Download x86 ISO
@@ -32,10 +32,16 @@ echo 3. Download Enterprise x64 ISO
 echo 4. Download Enterprise x86 ISO
 echo 5. Download Bing x64 ISO
 echo 6. Download Bing x86 ISO
+echo 7. Windows Server 2012 R2 Retail ISO
+echo 8. Windows Server 2012 R2 Volume License ISO
+echo 9. Windows Server 2012 R2 Language Pack ISO
+echo 10. Windows 8.1 x86 N ISO
+echo 11. Windows 8.1 x64 N ISO
+echo 12. Windows 8.1 Language Pack ISO
 echo.
 
 rem Get the user's input
-set /p userInput=Which version of Windows 8.1 would you like to download (1/2/3/4/5/6):
+set /p userInput=Which version of Windows 8.1 or Server 2012 R2 would you like to download (1/2/3/4/5/6/7/8/9/10/11/12):
 
 rem Check the user's input
 if "%userInput%"=="1" (
@@ -62,6 +68,30 @@ if "%userInput%"=="1" (
   echo.
   echo Downloading Windows 8.1 Bing x86...
   powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/Windows%208.1%20with%20Bing%2032%20bit.7z', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="7" (
+  echo.
+  echo Downloading Windows Server 2012 R2 Retail...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/server/2012r2/en_windows_server_2012_r2_with_update_x64_dvd_6052708-004.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="8" (
+  echo.
+  echo Downloading Windows Server 2012 R2 Volume License...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/server/2012r2/en_windows_server_2012_r2_vl_with_update_x64_dvd_6052766-003.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="9" (
+  echo.
+  echo Downloading Windows Server 2012 R2 Language Pack...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/server/2012r2/mu_windows_server_2012_r2_language_pack_with_update_x64_dvd_6066969-001.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="10" (
+  echo.
+  echo Downloading Windows 8.1 N x86...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_n_with_update_x86_dvd_6051704.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="11" (
+  echo.
+  echo Downloading Windows 8.1 N x64...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_with_update_x64_dvd_6051480.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="12" (
+  echo.
+  echo Downloading Windows 8.1 Language Pack x64...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/mu_windows_8.1_language_pack_with_update_x64_dvd_6066963.iso', '%downloadDirectory%Windows%userInput%.ISO')"
 ) else (
   echo Invalid input.
   goto :eof
@@ -69,5 +99,5 @@ if "%userInput%"=="1" (
 
 rem Display a success message
 echo.
-echo Windows 8.1 has been successfully downloaded.
+echo Windows has been successfully downloaded.
 echo.
