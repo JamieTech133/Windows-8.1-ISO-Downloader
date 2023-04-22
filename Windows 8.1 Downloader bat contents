@@ -1,0 +1,73 @@
+@echo off
+
+rem Clear the screen
+cls
+
+rem Set the download URL
+set downloadURL=https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_with_update_x64_dvd_6051480.iso
+
+rem Set the download directory
+set downloadDirectory=C:\Users\Jamie\Downloads\Windows 8.1 downloader
+
+rem Get the user's input
+set /p userInput=Do you understand that Windows 8.1 is out of support. Would you like to proceed (y/n):
+
+rem Check the user's input
+if "%userInput%"=="y" (
+  echo.
+  echo Continuing...
+) else (
+  echo.
+  echo Exiting...
+  goto :eof
+)
+
+rem Display a list of options
+echo If you need to enter a password, try bigcdn.
+echo Windows 8.1 ISO Downloader made by Jamie and Bard AI.
+echo.
+echo 1. Download x64 ISO
+echo 2. Download x86 ISO
+echo 3. Download Enterprise x64 ISO
+echo 4. Download Enterprise x86 ISO
+echo 5. Download Bing x64 ISO
+echo 6. Download Bing x86 ISO
+echo.
+
+rem Get the user's input
+set /p userInput=Which version of Windows 8.1 would you like to download (1/2/3/4/5/6):
+
+rem Check the user's input
+if "%userInput%"=="1" (
+  echo.
+  echo Downloading Windows 8.1 x64...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_with_update_x64_dvd_6051480.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="2" (
+  echo.
+  echo Downloading Windows 8.1 x86...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_with_update_x86_dvd_6051550.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="3" (
+  echo.
+  echo Downloading Windows 8.1 Enterprise x64...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_enterprise_with_update_x64_dvd_6054382.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="4" (
+  echo.
+  echo Downloading Windows 8.1 Enterprise x86...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/en_windows_8.1_enterprise_with_update_x86_dvd_6050710.iso', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="5" (
+  echo.
+  echo Downloading Windows 8.1 Bing x64...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/Windows%208.1%20with%20Bing%2064%20bit.7z', '%downloadDirectory%Windows%userInput%.ISO')"
+) else if "%userInput%"=="6" (
+  echo.
+  echo Downloading Windows 8.1 Bing x86...
+  powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://dl.bobpony.com/windows/8.x/8.1/Windows%208.1%20with%20Bing%2032%20bit.7z', '%downloadDirectory%Windows%userInput%.ISO')"
+) else (
+  echo Invalid input.
+  goto :eof
+)
+
+rem Display a success message
+echo.
+echo Windows 8.1 has been successfully downloaded.
+echo.
