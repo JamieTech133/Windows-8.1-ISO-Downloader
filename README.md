@@ -1,5 +1,6 @@
 # Windows 8.1 and Server 2012 R2 ISO Downloader Script
 
+## THIS PROJECT IS NO LONGER ACTIVELY DEVLEOPED AND DOESN'T WORK
 This script downloads the Windows 8.1 and Server 2012 R2 ISO files from the Bob Ponys servers. It is compatible with Windows 7, Windows 8, Windows 8.1, Windows 10 and Windows 11.
 
 Requirements:
